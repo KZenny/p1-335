@@ -66,4 +66,6 @@ class Guild {
         *       In either case, the original player in this guild remains unchanged.
         */
         bool copyPlayerTo(const std::string& playerName, Guild& target);
+        
+        void printGuild() const;
 };

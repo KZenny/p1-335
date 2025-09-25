@@ -3,7 +3,7 @@
 /**
  * @brief Constructs a new Guild object. Initializes the enlisted_players vector.
  */
-Guild::Guild() : enlisted_players{std::vector<Player>()} {}
+Guild::Guild(): enlisted_players{std::vector<Player>()} {}
 
 /**
 * @brief Searches for a player in the guild by name
@@ -81,4 +81,10 @@ bool Guild::copyPlayerTo(const std::string& playerName, Guild& target) {
 
     target.enlisted_players.push_back(*copiedPlayerItr);
     return true;
+}
+void Guild::printGuild() const {
+    std::cout << "Guild Members:" << std::endl;
+    for (const auto& player : enlisted_players) {
+        std::cout << "- " << player.getName() << std::endl;
+    }
 }
